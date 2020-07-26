@@ -1,12 +1,17 @@
 package main.java.com.margo.Format;
 
 import main.java.com.margo.Format.Colors.Color;
-import main.java.com.margo.Format.Format;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import java.util.ArrayList;
 
+import static com.margo.Format.Colors.FileColor.getFileColor;
 import static main.java.com.margo.Format.Colors.Color.DEFAULT;
-import static main.java.com.margo.Format.Colors.ConsoleColor.getConsoleColor;
+import static com.margo.Format.Colors.ConsoleColor.getConsoleColor;
+import static main.java.com.margo.Output.Output.FILE;
+import static main.java.com.margo.Output.Output.STD;
 
 public class ColoredFormat extends Format {
     // supported colors :  Black, White, red, green, blue, yellow, magenta, cyan
@@ -43,20 +48,17 @@ public class ColoredFormat extends Format {
     @Override
     public String toFormat(String text) {
         this.internalFormat.setOutput(this.output);
-
-        switch (this.output){
-            case STD -> {
-                String tmp = this.internalFormat.toFormat(text);
-                if (tmp.startsWith("\033[")){
-                    String rightColor = getConsoleColor(color).substring(4, 6);
-                    return tmp.replaceAll(";\\d+m", ";" + rightColor + "m");
-                }
-                return getConsoleColor(color) + tmp + getConsoleColor(DEFAULT);
+        if (this.output == STD){
+            String tmp = this.internalFormat.toFormat(text);
+            if (tmp.startsWith("\033[")){
+                String rightColor = getConsoleColor(color).substring(4, 6);
+                return tmp.replaceAll(";\\d+m", ";" + rightColor + "m");
             }
-            // text file by default for start
-            default -> {
-                return text;
-            }
+            return getConsoleColor(color) + tmp + getConsoleColor(DEFAULT);
         }
+        // text file by default for start
+        return  "<p style=\"color: " + getFileColor(color)+"\">"+ text + "</p>";
     }
+
+
 }

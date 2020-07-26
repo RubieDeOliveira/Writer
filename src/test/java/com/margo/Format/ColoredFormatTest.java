@@ -21,7 +21,7 @@ public class ColoredFormatTest {
     @Test
     public final void checkWithOnColor(){
 
-        ArrayList<Color> colors = new ArrayList<>() {{ add(BLUE); }};
+        ArrayList<Color> colors = new ArrayList<Color>() {{ add(BLUE); }};
         Format coloredFormat = new ColoredFormat(colors, new BasicFormat());
         coloredFormat.setOutput(Output.STD);
 
@@ -34,7 +34,7 @@ public class ColoredFormatTest {
     @Test
     public final void checkWithTwoColorsWithBlack(){
 
-        ArrayList<Color> colors = new ArrayList<>() {{ add(BLUE); add(BLACK); }};
+        ArrayList<Color> colors = new ArrayList<Color>() {{ add(BLUE); add(BLACK); }};
         Format coloredFormat = new ColoredFormat(colors, new BasicFormat());
         coloredFormat.setOutput(Output.STD);
 
@@ -45,7 +45,7 @@ public class ColoredFormatTest {
     @Test
     public final void checkWithTwoColorsBlueAndYellow(){
 
-        ArrayList<Color> colors = new ArrayList<>() {{ add(BLUE); add(YELLOW); }};
+        ArrayList<Color> colors = new ArrayList<Color>() {{ add(BLUE); add(YELLOW); }};
         Format coloredFormat = new ColoredFormat(colors, new BasicFormat());
         coloredFormat.setOutput(Output.STD);
 

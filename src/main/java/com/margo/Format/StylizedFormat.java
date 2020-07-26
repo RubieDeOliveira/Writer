@@ -1,18 +1,20 @@
 package main.java.com.margo.Format;
 
-import main.java.com.margo.Format.Format;
 import main.java.com.margo.Format.Style.Style;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import java.util.ArrayList;
 
 import static main.java.com.margo.Format.Colors.Color.DEFAULT;
-import static main.java.com.margo.Format.Colors.ConsoleColor.getConsoleColor;
+import static com.margo.Format.Colors.ConsoleColor.getConsoleColor;
+import static main.java.com.margo.Output.Output.STD;
 
 public class StylizedFormat extends Format {
     // supported : Bold, underline
     private ArrayList<main.java.com.margo.Format.Style.Style> styles;
 
-    public StylizedFormat(ArrayList<main.java.com.margo.Format.Style.Style> styles, Format format){
+    public StylizedFormat(ArrayList<Style> styles, Format format){
         this.internalFormat = format;
         this.styles = styles;
     }
@@ -34,19 +36,27 @@ public class StylizedFormat extends Format {
         return text;
     }
 
+    private String getStyle(Style style, String text){
+        if (style == Style.BOLD){
+            return "<b>" + text + "</b>";
+        }
+        return "<u>" + text + "</u>";
+    }
+
     @Override
     public String toFormat(String text) {
+        String result = text;
         this.internalFormat.setOutput(this.output);
 
-        switch (this.output) {
-            case STD -> {
-                String tmp = this.internalFormat.toFormat(text);
-                return treatStyleOnConsole(tmp);
-            }
-            // text file by default for start
-            default -> {
-                return text;
-            }
+        if (this.output == STD){
+            String tmp = this.internalFormat.toFormat(text);
+            return treatStyleOnConsole(tmp);
         }
+
+        for (Style style : styles){
+            result = getStyle(style, result);
+        }
+
+        return result;
     }
 }

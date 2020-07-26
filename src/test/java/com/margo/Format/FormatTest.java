@@ -22,10 +22,10 @@ public class FormatTest {
     @Test
     public final void testWithTwoFormats(){
 
-        ArrayList<Color> colors = new ArrayList<>() {{ add(BLUE); }};
+        ArrayList<Color> colors = new ArrayList<Color>() {{ add(BLUE); }};
         Format coloredFormat = new ColoredFormat(colors, new BasicFormat());
 
-        ArrayList<main.java.com.margo.Format.Style.Style> styles = new ArrayList<>() {{ add(Style.BOLD); }};
+        ArrayList<main.java.com.margo.Format.Style.Style> styles = new ArrayList<Style>() {{ add(Style.BOLD); }};
         Format stylizedFormat = new StylizedFormat(styles, coloredFormat);
         stylizedFormat.setOutput(main.java.com.margo.Output.Output.STD);
 
