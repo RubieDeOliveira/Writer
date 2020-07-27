@@ -1,9 +1,6 @@
 package main.java.com.margo.Format;
 
 import main.java.com.margo.Format.Colors.Color;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import java.util.ArrayList;
 
@@ -48,8 +45,9 @@ public class ColoredFormat extends Format {
     @Override
     public String toFormat(String text) {
         this.internalFormat.setOutput(this.output);
+        String tmp = this.internalFormat.toFormat(text);
+
         if (this.output == STD){
-            String tmp = this.internalFormat.toFormat(text);
             if (tmp.startsWith("\033[")){
                 String rightColor = getConsoleColor(color).substring(4, 6);
                 return tmp.replaceAll(";\\d+m", ";" + rightColor + "m");
@@ -57,7 +55,7 @@ public class ColoredFormat extends Format {
             return getConsoleColor(color) + tmp + getConsoleColor(DEFAULT);
         }
         // text file by default for start
-        return  "<p style=\"color: " + getFileColor(color)+"\">"+ text + "</p>";
+        return  "<p style=\"color: " + getFileColor(color)+"\">"+ tmp + "</p>";
     }
 
 

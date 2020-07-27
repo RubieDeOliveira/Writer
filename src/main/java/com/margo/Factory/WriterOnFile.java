@@ -4,7 +4,6 @@ import main.java.com.margo.Format.Format;
 import main.java.com.margo.Output.Output;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -25,9 +24,9 @@ public class WriterOnFile extends WriterFactory{
         try {
             out = new FileOutputStream(new File(this.filename + ".html"), true);
 
-            textToWrite = this.format.toFormat(text);
+            textToWrite = "<html>" + this.format.toFormat(text) + "</html>";
 
-            out.write(text.getBytes());
+            out.write(textToWrite.getBytes());
             out.close();
         } catch (IOException e) {
             e.printStackTrace();

@@ -31,7 +31,6 @@ public class FormatTest {
 
         String formatedString = stylizedFormat.toFormat(textToWrite);
         Assert.assertFalse(formatedString.equals(textToWrite));
-        System.out.println(formatedString);
-        Assert.assertTrue(formatedString.equals("\033[0;34m" + textToWrite + "\033[0m"));
+        Assert.assertTrue(formatedString.equals("\033[1;34m" + textToWrite + "\033[0m"));
     }
 }

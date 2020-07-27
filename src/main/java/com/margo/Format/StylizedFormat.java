@@ -1,8 +1,6 @@
 package main.java.com.margo.Format;
 
 import main.java.com.margo.Format.Style.Style;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import java.util.ArrayList;
 
@@ -45,12 +43,11 @@ public class StylizedFormat extends Format {
 
     @Override
     public String toFormat(String text) {
-        String result = text;
         this.internalFormat.setOutput(this.output);
+        String result = this.internalFormat.toFormat(text);
 
         if (this.output == STD){
-            String tmp = this.internalFormat.toFormat(text);
-            return treatStyleOnConsole(tmp);
+            return treatStyleOnConsole(result);
         }
 
         for (Style style : styles){
