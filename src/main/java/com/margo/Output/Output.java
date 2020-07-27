@@ -1,4 +1,4 @@
-package main.java.com.margo.Output;
+package com.margo.Output;
 
 public enum Output {
     STD,

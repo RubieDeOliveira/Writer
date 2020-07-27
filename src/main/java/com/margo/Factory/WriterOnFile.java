@@ -1,14 +1,14 @@
-package main.java.com.margo.Factory;
+package com.margo.Factory;
 
-import main.java.com.margo.Format.Format;
-import main.java.com.margo.Output.Output;
+import com.margo.Format.Format;
+import com.margo.Output.Output;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 
-public class WriterOnFile extends WriterFactory{
+public class WriterOnFile extends Writer{
     private String filename;
 
     public WriterOnFile(Format format, String filename) {

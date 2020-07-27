@@ -1,7 +1,4 @@
-package main.java.com.margo.Format;
-
-import main.java.com.margo.Format.Format;
-import main.java.com.margo.Output.Output;
+package com.margo.Format;
 
 public class BasicFormat extends Format {
 

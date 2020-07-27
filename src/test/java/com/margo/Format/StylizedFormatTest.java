@@ -1,18 +1,18 @@
 package test.java.com.margo.Format;
 
-import main.java.com.margo.Format.BasicFormat;
-import main.java.com.margo.Format.Format;
-import main.java.com.margo.Format.Style.Style;
-import main.java.com.margo.Format.StylizedFormat;
-import main.java.com.margo.Output.Output;
+import com.margo.Format.BasicFormat;
+import com.margo.Format.Format;
+import com.margo.Format.Style.Style;
+import com.margo.Format.StylizedFormat;
+import com.margo.Output.Output;
 import org.junit.Assert;
 import org.junit.Test;
 
 
 import java.util.ArrayList;
 
-import static main.java.com.margo.Format.Style.Style.BOLD;
-import static main.java.com.margo.Format.Style.Style.UNDERLINE;
+import static com.margo.Format.Style.Style.BOLD;
+import static com.margo.Format.Style.Style.UNDERLINE;
 
 public class StylizedFormatTest {
 
@@ -22,7 +22,7 @@ public class StylizedFormatTest {
 
     @Test
     public final void checkWithBold(){
-        ArrayList<main.java.com.margo.Format.Style.Style> styles = new ArrayList<Style>() {{ add(BOLD); }};
+        ArrayList<com.margo.Format.Style.Style> styles = new ArrayList<Style>() {{ add(BOLD); }};
         Format stylizedFormat = new StylizedFormat(styles, new BasicFormat());
         stylizedFormat.setOutput(Output.STD);
 
@@ -33,7 +33,7 @@ public class StylizedFormatTest {
 
     @Test
     public final void checkWithUnderline(){
-        ArrayList<main.java.com.margo.Format.Style.Style> styles = new ArrayList<Style>() {{ add(UNDERLINE); }};
+        ArrayList<com.margo.Format.Style.Style> styles = new ArrayList<Style>() {{ add(UNDERLINE); }};
         Format stylizedFormat = new StylizedFormat(styles, new BasicFormat());
         stylizedFormat.setOutput(Output.STD);
 

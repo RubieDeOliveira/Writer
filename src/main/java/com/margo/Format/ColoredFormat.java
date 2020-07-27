@@ -1,14 +1,13 @@
-package main.java.com.margo.Format;
+package com.margo.Format;
 
-import main.java.com.margo.Format.Colors.Color;
+import com.margo.Format.Colors.Color;
 
 import java.util.ArrayList;
 
-import static com.margo.Format.Colors.FileColor.getFileColor;
-import static main.java.com.margo.Format.Colors.Color.DEFAULT;
+import static com.margo.Format.Colors.Color.DEFAULT;
 import static com.margo.Format.Colors.ConsoleColor.getConsoleColor;
-import static main.java.com.margo.Output.Output.FILE;
-import static main.java.com.margo.Output.Output.STD;
+import static com.margo.Format.Colors.FileColor.getFileColor;
+import static com.margo.Output.Output.STD;
 
 public class ColoredFormat extends Format {
     // supported colors :  Black, White, red, green, blue, yellow, magenta, cyan

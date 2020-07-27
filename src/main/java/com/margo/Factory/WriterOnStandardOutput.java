@@ -1,9 +1,9 @@
-package main.java.com.margo.Factory;
+package com.margo.Factory;
 
-import main.java.com.margo.Format.Format;
-import main.java.com.margo.Output.Output;
+import com.margo.Format.Format;
+import com.margo.Output.Output;
 
-public class WriterOnStandardOutput extends WriterFactory{
+public class WriterOnStandardOutput extends Writer{
 
     public WriterOnStandardOutput(Format format) {
         super(format, Output.STD);

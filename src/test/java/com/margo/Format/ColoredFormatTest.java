@@ -1,16 +1,13 @@
 package com.margo.Format;
 
-import main.java.com.margo.Format.BasicFormat;
-import main.java.com.margo.Format.ColoredFormat;
-import main.java.com.margo.Format.Colors.Color;
-import main.java.com.margo.Format.Format;
-import main.java.com.margo.Output.Output;
+import com.margo.Format.Colors.Color;
+import com.margo.Output.Output;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static main.java.com.margo.Format.Colors.Color.*;
+import static com.margo.Format.Colors.Color.*;
 
 public class ColoredFormatTest {
 
@@ -74,7 +71,6 @@ public class ColoredFormatTest {
         coloredFormat.setOutput(Output.FILE);
 
         String formatedString = coloredFormat.toFormat(textToWrite);
-        System.out.println(formatedString);
         Assert.assertTrue(formatedString.equals("<p style=\"color: FFFFFF\">" + textToWrite + "</p>"));
     }
 

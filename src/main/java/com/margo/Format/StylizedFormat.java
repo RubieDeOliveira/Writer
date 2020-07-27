@@ -1,16 +1,16 @@
-package main.java.com.margo.Format;
+package com.margo.Format;
 
-import main.java.com.margo.Format.Style.Style;
+import com.margo.Format.Style.Style;
 
 import java.util.ArrayList;
 
-import static main.java.com.margo.Format.Colors.Color.DEFAULT;
+import static com.margo.Format.Colors.Color.DEFAULT;
 import static com.margo.Format.Colors.ConsoleColor.getConsoleColor;
-import static main.java.com.margo.Output.Output.STD;
+import static com.margo.Output.Output.STD;
 
 public class StylizedFormat extends Format {
     // supported : Bold, underline
-    private ArrayList<main.java.com.margo.Format.Style.Style> styles;
+    private ArrayList<com.margo.Format.Style.Style> styles;
 
     public StylizedFormat(ArrayList<Style> styles, Format format){
         this.internalFormat = format;

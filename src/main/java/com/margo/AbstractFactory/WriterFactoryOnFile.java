@@ -1,8 +1,7 @@
-package main.java.com.margo.AbstractFactory;
+package com.margo.AbstractFactory;
 
-import main.java.com.margo.Factory.WriterFactory;
-import main.java.com.margo.Factory.WriterOnFile;
-import main.java.com.margo.Format.Format;
+import com.margo.Factory.WriterOnFile;
+import com.margo.Format.Format;
 
 public class WriterFactoryOnFile extends AbstractWriterFactory{
     private String filename;
@@ -13,7 +12,7 @@ public class WriterFactoryOnFile extends AbstractWriterFactory{
     }
 
     @Override
-    public WriterFactory create() {
+    public com.margo.Factory.Writer create() {
         return new WriterOnFile(this.format, this.filename);
     }
 }

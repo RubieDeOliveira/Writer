@@ -1,17 +1,17 @@
 package com.margo.AbstractFactory;
 
-import main.java.com.margo.Factory.WriterOnStandardOutput;
-import main.java.com.margo.Format.BasicFormat;
-import main.java.com.margo.Format.ColoredFormat;
-import main.java.com.margo.Format.Colors.Color;
-import main.java.com.margo.Format.Format;
-import main.java.com.margo.Format.Style.Style;
-import main.java.com.margo.Format.StylizedFormat;
+import com.margo.Factory.WriterOnStandardOutput;
+import com.margo.Format.BasicFormat;
+import com.margo.Format.ColoredFormat;
+import com.margo.Format.Colors.Color;
+import com.margo.Format.Format;
+import com.margo.Format.Style.Style;
+import com.margo.Format.StylizedFormat;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static main.java.com.margo.Format.Colors.Color.*;
+import static com.margo.Format.Colors.Color.*;
 
 public class WriterFactoryOnStdTest {
     private String text = "Hello World !";
@@ -19,7 +19,7 @@ public class WriterFactoryOnStdTest {
     @Test
     public final void testItWritesOnStdOutput() {
         Format basicFomat = new BasicFormat();
-        main.java.com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(basicFomat);
+        com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(basicFomat);
         stdOut.write("Basic text");
     }
 
@@ -27,7 +27,7 @@ public class WriterFactoryOnStdTest {
     public final void testItWritesOnStdOutputInRed() {
         ArrayList<Color> colors = new ArrayList<Color>() {{ add(RED); }};
         Format format = new ColoredFormat(colors, new BasicFormat());
-        main.java.com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
+        com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
         stdOut.write("Red text");
     }
 
@@ -35,7 +35,7 @@ public class WriterFactoryOnStdTest {
     public final void testItWritesOnStdOutputInRedAndWhite() {
         ArrayList<Color> colors = new ArrayList<Color>() {{ add(RED); add(WHITE); }};
         Format format = new ColoredFormat(colors, new BasicFormat());
-        main.java.com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
+        com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
         stdOut.write("Magenta text");
     }
 
@@ -43,7 +43,7 @@ public class WriterFactoryOnStdTest {
     public final void testItWritesOnStdOutputInBold() {
         ArrayList<Style> styles = new ArrayList<Style>() {{ add(Style.BOLD); }};
         Format format = new StylizedFormat(styles, new BasicFormat());
-        main.java.com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
+        com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
         stdOut.write("Text in bold style");
     }
 
@@ -51,7 +51,7 @@ public class WriterFactoryOnStdTest {
     public final void testItWritesOnStdOutputUnderlined() {
         ArrayList<Style> styles = new ArrayList<Style>() {{ add(Style.UNDERLINE); }};
         Format format = new StylizedFormat(styles, new BasicFormat());
-        main.java.com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
+        com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
         stdOut.write("Underlined text");
     }
 
@@ -63,7 +63,7 @@ public class WriterFactoryOnStdTest {
         ArrayList<Color> colors = new ArrayList<Color>() {{ add(YELLOW); }};
         Format format = new ColoredFormat(colors, stylizedFormat);
 
-        main.java.com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
+        com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
         stdOut.write("Bold and yellow");
     }
 
@@ -75,7 +75,7 @@ public class WriterFactoryOnStdTest {
         ArrayList<Style> styles = new ArrayList<Style>() {{ add(Style.BOLD); }};
         Format format = new StylizedFormat(styles, coloredFormat);
 
-        main.java.com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
+        com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
         stdOut.write("Bold and cyan");
     }
 
@@ -88,7 +88,7 @@ public class WriterFactoryOnStdTest {
         ArrayList<Color> colors = new ArrayList<Color>() {{ add(GREEN); }};
         Format format = new ColoredFormat(colors, stylizedFormat);
 
-        main.java.com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
+        com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
         stdOut.write("Green underlined");
     }
 
@@ -101,7 +101,7 @@ public class WriterFactoryOnStdTest {
         ArrayList<Style> styles = new ArrayList<Style>() {{ add(Style.UNDERLINE); }};
         Format format = new StylizedFormat(styles, coloredFormat);
 
-        main.java.com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
+        com.margo.Factory.WriterOnStandardOutput stdOut = new WriterOnStandardOutput(format);
         stdOut.write("Green underlined (yellow + blue)");
     }
 }

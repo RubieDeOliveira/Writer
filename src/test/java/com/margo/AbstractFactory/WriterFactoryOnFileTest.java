@@ -1,25 +1,23 @@
 package com.margo.AbstractFactory;
 
-import main.java.com.margo.Factory.WriterOnFile;
-import main.java.com.margo.Format.BasicFormat;
-import main.java.com.margo.Format.ColoredFormat;
-import main.java.com.margo.Format.Colors.Color;
-import main.java.com.margo.Format.Format;
-import main.java.com.margo.Format.Style.Style;
-import main.java.com.margo.Format.StylizedFormat;
+import com.margo.Factory.WriterOnFile;
+import com.margo.Format.BasicFormat;
+import com.margo.Format.ColoredFormat;
+import com.margo.Format.Colors.Color;
+import com.margo.Format.Format;
+import com.margo.Format.Style.Style;
+import com.margo.Format.StylizedFormat;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
-import static main.java.com.margo.Format.Colors.Color.*;
+import static com.margo.Format.Colors.Color.*;
 
 public class WriterFactoryOnFileTest {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");

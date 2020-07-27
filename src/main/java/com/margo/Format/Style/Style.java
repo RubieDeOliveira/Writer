@@ -1,4 +1,4 @@
-package main.java.com.margo.Format.Style;
+package com.margo.Format.Style;
 
 public enum Style {
     BOLD,

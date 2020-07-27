@@ -1,8 +1,8 @@
-package main.java.com.margo.AbstractFactory;
+package com.margo.AbstractFactory;
 
-import main.java.com.margo.Factory.WriterFactory;
-import main.java.com.margo.Format.Format;
+import com.margo.Format.Format;
 
+// TODO : see how to call the abstract factory
 public abstract  class AbstractWriterFactory {
     protected Format format;
 
@@ -10,5 +10,5 @@ public abstract  class AbstractWriterFactory {
         this.format = format;
     }
 
-    public abstract WriterFactory create();
+    public abstract com.margo.Factory.Writer create();
 }

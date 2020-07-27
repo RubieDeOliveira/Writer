@@ -1,10 +1,8 @@
 package com.margo.Format.Colors;
 
-import main.java.com.margo.Format.Colors.Color;
-
 public class ConsoleColor {
 
-    public static String getConsoleColor(main.java.com.margo.Format.Colors.Color color) {
+    public static String getConsoleColor(com.margo.Format.Colors.Color color) {
         if (color == Color.BLACK) { return "\033[0;30m"; }
         else if (color == Color.RED) { return "\033[0;31m"; }
         else if (color == Color.GREEN) { return "\033[0;32m"; }

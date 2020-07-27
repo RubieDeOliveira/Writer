@@ -1,7 +1,7 @@
 package test.java.com.margo.Format;
 
-import main.java.com.margo.Format.BasicFormat;
-import main.java.com.margo.Format.Format;
+import com.margo.Format.BasicFormat;
+import com.margo.Format.Format;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;

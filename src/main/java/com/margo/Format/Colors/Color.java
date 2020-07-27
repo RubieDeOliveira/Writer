@@ -1,4 +1,4 @@
-package main.java.com.margo.Format.Colors;
+package com.margo.Format.Colors;
 
 public enum Color {
     BLACK,

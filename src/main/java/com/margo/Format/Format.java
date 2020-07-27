@@ -1,6 +1,6 @@
-package main.java.com.margo.Format;
+package com.margo.Format;
 
-import main.java.com.margo.Output.Output;
+import com.margo.Output.Output;
 
 public abstract class Format {
     protected Format internalFormat;

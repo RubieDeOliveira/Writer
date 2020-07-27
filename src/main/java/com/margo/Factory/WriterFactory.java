@@ -1,15 +1,10 @@
-package main.java.com.margo.Factory;
+package com.margo.Factory;
 
-import main.java.com.margo.Format.Format;
-import main.java.com.margo.Output.Output;
+import com.margo.AbstractFactory.AbstractWriterFactory;
 
-public abstract class WriterFactory {
-    protected Format format;
+public class WriterFactory {
 
-    public WriterFactory(Format format, Output output){
-        this.format = format;
-        this.format.setOutput(output);
+    public static Writer getWriter(AbstractWriterFactory factory){
+        return factory.create();
     }
-
-    public abstract void write(String text);
 }
